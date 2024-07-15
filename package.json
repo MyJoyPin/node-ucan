@@ -4,6 +4,11 @@
   "description": "UCAN for Node.js",
   "author": "Dmytro Savranskyi <ingvuil@gmail.com>",
   "license": "MIT",
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/myjoypin/node-ucan.git"
+  },
+  "private": false,
   "main": "./index.node",
   "module": "./index.mjs",
   "exports": {
