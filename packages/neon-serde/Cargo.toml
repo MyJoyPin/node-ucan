@@ -1,0 +1,25 @@
+[package]
+name = "neon-serde2"
+version = "0.9.0"
+authors = [
+    "Damir Jelić <poljar@termina.org.uk>",
+    "Gabriel Castro <dev@GabrielCastro.ca>"
+]
+description = "Easily serialize object for use with neon, fork of neon-serde"
+license = "MIT"
+repository = "https://github.com/matrix-org/neon-serde"
+readme = "readme.md"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+error-chain = "0.12"
+
+[dependencies.neon]
+version = "1.0"
+
+[dependencies.num]
+version = "0.4"
+default-features = false
+
+[dev-dependencies]
+serde_derive = "1.0"

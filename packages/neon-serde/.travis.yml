@@ -1,0 +1,34 @@
+language: rust
+
+cache:
+  yarn: true
+  cargo: true
+
+rust:
+  - stable
+  - beta
+  - nightly
+
+env:
+  matrix:
+    - TRAVIS_NODE_VERSION="8"
+    - TRAVIS_NODE_VERSION="10"
+    - TRAVIS_NODE_VERSION="12"
+
+matrix:
+  allow_failures:
+    - rust: nightly
+
+os:
+  - linux
+  - osx
+
+before_install:
+  - export PATH="$PATH:$HOME/.cargo/bin"
+  - source $HOME/.nvm/nvm.sh
+  - nvm install ${TRAVIS_NODE_VERSION}
+  - nvm use ${TRAVIS_NODE_VERSION}
+  - ./ci/setup.sh
+
+script:
+  - ./ci/test.sh

@@ -1,0 +1,30 @@
+[package]
+name = "node-ucan"
+version = "0.1.0"
+license = "MIT"
+edition = "2021"
+exclude = ["index.node"]
+
+[lib]
+crate-type = ["cdylib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+neon = { version = "1", features = ["futures"] }
+ucan = { version = "0.5", path = "packages/ucan" }
+ucan-key-support = { version = "0.1", path = "packages/ucan-key-support" }
+did-key = "0.2"
+url = "2.5"
+once_cell = "1.19"
+tokio = { version = "1.36", features = ["full"] }
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0" }
+serde_bytes = "0.11"
+neon-serde2 = { version = "0.9", path = "packages/neon-serde" }
+rand = "0.8"
+base64 = "0.22"
+bs58 = "0.5"
+cid = "0.11"
+tinytemplate = "1.2"
